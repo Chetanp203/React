@@ -7,6 +7,8 @@ import { Route, Routes } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import Counter from './components/Counter';
 import Section from './components/Section';
+import Type1UseEffect from './components/Type1UseEffect';
+import Type2UseEffect from './components/Type2UseEffect';
 
 function App(){
 
@@ -15,6 +17,8 @@ function App(){
     <div>
        <Navbar/>
       <Routes>
+        <Route exact path='/type2useEffect' element={<Type2UseEffect/>}/>
+        <Route exact path='/type1useEffect' element={<Type1UseEffect/>}/>
         <Route exact path="/home" element={<Home/>}/>
         <Route exact path="/welcome" element={<Welcome/>} />
         <Route exact path="/counter" element={<Counter/>}/>

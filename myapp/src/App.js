@@ -18,6 +18,8 @@ import { useState } from 'react';
 import Map from './components/01-07/Map';
 import Wrapper from './components/01-07/Wrapper';
 import StyledComponent from './components/01-07/StyledComponent';
+import Xyz from './components/02-07/Xyz';
+import SinglePro from './components/02-07/SinglePro';
 
 function App(){
   const [myUsers, setMyUsers] = useState(["Rahul", "Rocky", "Manoj"])
@@ -27,6 +29,8 @@ function App(){
     <div>
        <Navbar/>
       <Routes>
+        <Route exact path='/singlepro/:id' element={<SinglePro/>}/>
+        <Route exact path='/xyz' element={<Xyz/>}/>
         <Route exact path='/styledcomponent' element={<StyledComponent/>} />
         <Route exact path='/wrapper' element={<Wrapper/>}/>
       <Route exact path='/map' element={<Map myUsers={myUsers} setMyUsers={setMyUsers} myName={"Krishna"} kuchBhi={["Ajay", "Chetan", "Durvesh"]} />} />

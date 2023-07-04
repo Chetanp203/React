@@ -20,6 +20,10 @@ import Wrapper from './components/01-07/Wrapper';
 import StyledComponent from './components/01-07/StyledComponent';
 import Xyz from './components/02-07/Xyz';
 import SinglePro from './components/02-07/SinglePro';
+import DynamicStyles from './components/04-07/DynamicStyles';
+import DynamicClasses from './components/04-07/DynamicClasses';
+import ChildernProp from './components/04-07/ChildrenProp';
+
 
 function App(){
   const [myUsers, setMyUsers] = useState(["Rahul", "Rocky", "Manoj"])
@@ -29,6 +33,9 @@ function App(){
     <div>
        <Navbar/>
       <Routes>
+        <Route exact path='/childrenprops' element={<ChildernProp/>} />
+        <Route exact path='/dynamicclasses' element={<DynamicClasses/>}/>
+        <Route exact path='/dynamicstyles' element={<DynamicStyles/>}/>
         <Route exact path='/singlepro/:id' element={<SinglePro/>}/>
         <Route exact path='/xyz' element={<Xyz/>}/>
         <Route exact path='/styledcomponent' element={<StyledComponent/>} />

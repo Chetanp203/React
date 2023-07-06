@@ -23,6 +23,7 @@ import SinglePro from './components/02-07/SinglePro';
 import DynamicStyles from './components/04-07/DynamicStyles';
 import DynamicClasses from './components/04-07/DynamicClasses';
 import ChildernProp from './components/04-07/ChildrenProp';
+import FormOne from './components/06-07/FormOne';
 
 
 function App(){
@@ -33,6 +34,7 @@ function App(){
     <div>
        <Navbar/>
       <Routes>
+        <Route exact path='/formone' element={<FormOne/>}/>
         <Route exact path='/childrenprops' element={<ChildernProp/>} />
         <Route exact path='/dynamicclasses' element={<DynamicClasses/>}/>
         <Route exact path='/dynamicstyles' element={<DynamicStyles/>}/>

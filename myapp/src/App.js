@@ -27,6 +27,8 @@ import FormOne from './components/06-07/FormOne';
 import FormSingleState from './components/08-07/FormSingleState';
 import Todos from './components/Todos';
 import UseCallback from './components/UseCallBack';
+import UseMemo from './components/09-07/UseMemo';
+import UseReducer from './components/09-07/UseReducer';
 
 
 function App(){
@@ -37,7 +39,9 @@ function App(){
     <div>
        <Navbar/>
       <Routes>
-        <Route exact path='usecallback' element={<UseCallback/>}/>
+        <Route exact path='/usereducer' element={<UseReducer/>}/>
+        <Route exact path='/use-memo' element={<UseMemo/>}/>
+        <Route exact path='/usecallback' element={<UseCallback/>}/>
         <Route exact path='/todos' element={<Todos/>}/>
         <Route exact path='/formsinglestate' element={<FormSingleState/>}/>
         <Route exact path='/formone' element={<FormOne/>}/>

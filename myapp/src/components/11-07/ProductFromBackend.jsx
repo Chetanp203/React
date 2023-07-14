@@ -1,16 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import './ProductFromBackend.css'
+import { useNavigate } from 'react-router';
+
 
 const ProductFromBackend = () => {
 
     const [products, setProducts] = useState([]);
+    const router = useNavigate();
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
             .then(res => res.json())
             .then(json => setProducts(json))
-            .then(json => console.log(json))
+            // .then(json => console.log(json))
     }, [])
+
+    const redirect=(id)=>{
+        // console.log(id,"-id")
+        // alert('working..')
+        router(`/product/${id}`)
+    
+    }
     return (
         <div>
             <h1>Products:</h1>
@@ -19,7 +29,7 @@ const ProductFromBackend = () => {
             {products.length ?
             <div className="products">
                 {products.map((pro) => (
-                    <div className="product-card">
+                    <div className="product-card" onClick={() =>redirect(pro.id)}>
                         <img src={pro.image} />
                         <p><b>ID :</b>{pro.id}</p>
                         <h4>Name : {pro.title}</h4>

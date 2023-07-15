@@ -31,6 +31,8 @@ import UseMemo from './components/09-07/UseMemo';
 import UseReducer from './components/09-07/UseReducer';
 import ProductFromBackend from './components/11-07/ProductFromBackend';
 import Product from './components/13-07/Product';
+import Register from './components/15-07/Register';
+import Login from './components/15-07/Login';
 
 
 function App(){
@@ -41,6 +43,8 @@ function App(){
     <div>
        <Navbar/>
       <Routes>
+        <Route exact path='login' element={<Login/>}/>
+        <Route exact path='register' element={<Register/>}/>
         <Route exact path='/product/:id' element={<Product/>}/>
         <Route exact path='/product-from-backend' element={<ProductFromBackend/>}/>
         <Route exact path='/usereducer' element={<UseReducer/>}/>

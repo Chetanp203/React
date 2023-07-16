@@ -17,7 +17,12 @@ const Register = () => {
         if(userData.name && userData.email && userData.password){
             const array = JSON.parse(localStorage.getItem("Users")) || [];
 
-            const userDataObj = {name: userData.name, email: userData.email, password: userData.password}
+            const userDataObj = {
+                name: userData.name,
+                email: userData.email,
+                password: userData.password,
+                cart:[]
+            };
             array.push(userDataObj);
             localStorage.setItem("Users", JSON.stringify(array));
             alert("Registration Successfull!!!")
@@ -29,14 +34,14 @@ const Register = () => {
   return (
     <div>
         <h1>Register</h1>
-        <form  onSubmit={handleSubmit}>
+        <form  onSubmit={handleSubmit} style={{border:'1px solid black',width:'250px',height:'300px',backgroundColor:'yellow',fontSize:'30px',padding:'50px',margin:'auto'}}>
             <label >Name:</label><br />
-            <input type="text" name='name'  onChange={handleChange}/><br />
+            <input type="text" name='name'  onChange={handleChange} style={{width:'250px',height:'40px'}}/><br />
             <label >Email:</label><br />
-            <input type="text" name='email' onChange={handleChange}/><br />
+            <input type="text" name='email' onChange={handleChange} style={{width:'250px',height:'40px'}}/><br />
             <label >Password: </label><br />
-            <input type="text" name='password' onChange={handleChange}/><br />
-            <input type="submit" value="Register" /><br />
+            <input type="text" name='password' onChange={handleChange} style={{width:'250px',height:'40px'}}/><br />
+            <input type="submit" value="Register" style={{width:'250px',height:'40px',backgroundColor:'red',border:'none',borderRadius:'5px',color:'white',marginTop:'20px'}} /><br />
         </form>
     </div>
   )

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Product = () => {
     const[isUserLoggedIn, setIsUserLoggedIn]=useState(false);
@@ -8,6 +8,7 @@ const Product = () => {
     const [products, setProducts] = useState([]);
     const [singleProduct, setSingleProduct] = useState({});
     const { id } = useParams();
+    const router = useNavigate();
     // console.log(products, "- products")
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
@@ -46,6 +47,8 @@ const Product = () => {
                     break;
                 }
             }
+            alert("Added to cart")
+            router("/product-from-backend")
         } else {
             alert("Login to add items to cart..")
         }

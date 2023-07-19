@@ -33,6 +33,7 @@ import ProductFromBackend from './components/11-07/ProductFromBackend';
 import Product from './components/13-07/Product';
 import Register from './components/15-07/Register';
 import Login from './components/15-07/Login';
+import Cart from './components/18-07/Cart';
 
 
 function App(){
@@ -43,6 +44,7 @@ function App(){
     <div>
        <Navbar/>
       <Routes>
+        <Route exact path='/cart' element={<Cart/>}/>
         <Route exact path='login' element={<Login/>}/>
         <Route exact path='register' element={<Register/>}/>
         <Route exact path='/product/:id' element={<Product/>}/>

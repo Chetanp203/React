@@ -1,28 +1,28 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { useContext } from "react";
+import { AuthContext } from "../Context/Auth.context";
 
 function Home(){
+    const {state, login,logout} =useContext(AuthContext);
+    // console.log(state,"state from context in home")
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
     const router = useNavigate()
 
     useEffect(() => {
-        var user = JSON.parse(localStorage.getItem("Current-user"));
-        console.log(user,"-user")
-        if(user){
+        if(state?.user?.email){
             setIsUserLoggedIn(true);
+        }else{
+            setIsUserLoggedIn(false);
         }
-    })
+    },[state])
 
-    function logout(){
-        localStorage.removeItem("Current-user");
-        setIsUserLoggedIn(false);
-        alert("Logout Successfull!!")
-    }
+   
     return (
-       <div style={{textAlign:'center'}}>
+       <div style={{textAlign:'center',height:'500px'}}>
         <h1>Welcome to the store User!!</h1>
         <div>
-            {isUserLoggedIn ? <button onClick={logout} style={{padding:'10px 20px',fontSize:'20px'}}>Logout</button>: <button onClick={() => router("/login")}>Login</button>}
+            {isUserLoggedIn ? <button onClick={()=> logout()} style={{padding:'10px 20px',fontSize:'20px'}}>Logout</button>: <button onClick={() => router("/login")}>Login</button>}
         </div>
        </div>
     )

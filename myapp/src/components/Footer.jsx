@@ -1,7 +1,7 @@
 function Footer(){
     return(
-        <div>
-            <h1>This is footer</h1>
+        <div style={{width:'100%',border:'1px solid black'}}>
+            <h1 style={{textAlign:'center'}}>Footer</h1>
         </div>
     )
 }

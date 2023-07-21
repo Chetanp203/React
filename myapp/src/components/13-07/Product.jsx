@@ -60,19 +60,19 @@ const Product = () => {
         <div style={{ display: 'flex', justifyContent: "space-evenly" ,padding:'50'}}>
             <div style={{ width: "30%", height: "500px", cursor:'pointer',
                         padding:'20px',display:'flex',flexWrap:'wrap',justifyContent:'space-around'}}>
-                <img style={{ width: "45%", height: "45%" ,border:'1px solid black'}} src={singleProduct.image} />
-                <img style={{ width: "45%", height: "45%" ,border:'1px solid black'}} src={singleProduct.image} />
-                <img style={{ width: "45%", height: "45%" ,border:'1px solid black'}} src={singleProduct.image} />
-                <img style={{ width: "45%", height: "45%" ,border:'1px solid black'}} src={singleProduct.image} />
+                <img style={{ width: "45%", height: "45%" ,border:'1px solid black',padding:'7px'}} src={singleProduct.image} />
+                <img style={{ width: "45%", height: "45%" ,border:'1px solid black',padding:'7px'}} src={singleProduct.image} />
+                <img style={{ width: "45%", height: "45%" ,border:'1px solid black',padding:'7px'}} src={singleProduct.image} />
+                <img style={{ width: "45%", height: "45%" ,border:'1px solid black',padding:'7px'}} src={singleProduct.image} />
             </div>
-            <div style={{ width: "40%", height: "500px",backgroundColor:"lightgrey" ,padding:'20px'}}>
-                <h2>Name :{singleProduct.title}</h2>
+            <div style={{ width: "40%", height: "500px",backgroundColor:"lightblue" ,padding:'20px'}}>
+                <h1>Name :{singleProduct.title}</h1>
                 <br />
                 <h4>Category: {singleProduct.category}</h4>
                 <br />
-                <h5>Description: {singleProduct.description}</h5>
+                <h5 style={{paddingTop:'30px', paddingBottom:'30px'}}>Description: {singleProduct.description}</h5>
                 <h1>Price : Rs.{singleProduct.price}</h1>
-                <button onClick={addCart} style={{width:'250px',height:'40px',fontWeight:'bolder',backgroundColor:'black',color:'white',border:'none',borderRadius:'5px'}}>Add to cart</button>
+                <button onClick={addCart} style={{width:'350px',height:'50px',fontWeight:'bolder',fontSize:'20px',backgroundColor:'black',color:'white',border:'none',borderRadius:'5px',marginTop:'50px'}}>Add to cart</button>
             </div>
         </div >
     )

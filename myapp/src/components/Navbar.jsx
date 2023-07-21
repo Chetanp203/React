@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router"
+import { useContext } from "react";
+import { AuthContext } from "../Context/Auth.context";
 
 function Navbar(){
+    const {state, login,logout} =useContext(AuthContext);
+    // console.log(state,"state from context in navbar")
+
     const router = useNavigate();
     const [user, setUser] = useState();
 
     useEffect(()=> {
-        const isUserPresent = JSON.parse(localStorage.getItem("Current-user"));
-        if (isUserPresent){
-            setUser(isUserPresent)
-        }
-    })
+       if(state?.user){
+        setUser(state?.user)
+       }else{
+        setUser({});
+       }
+    },[state])
 
-    function logout() {
-        localStorage.removeItem("Current-user")
-        setUser({})
-    }
+    
     return(
         <div style={{width:'100%', height:'50px',backgroundColor:'black',color:'white',justifyContent:'space-around',textAlign:'center',display:'flex'}}>
            <div style={{width:'10%'}}>

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "./../../Context/Auth.context";
 
 function Login() {
-    const {state, login} =useContext(AuthContext);
+    const { state, login } = useContext(AuthContext);
     // console.log(state,"state from context in login")
 
     const [userData, setUserData] = useState({ email: "", password: "" })
@@ -22,20 +22,19 @@ function Login() {
             for (var i = 0; i < users.length; i++) {
                 if (users[i].email == userData.email && users[i].password == userData.password) {
                     flag = true; // re-assign
+                    login(users[i]);
+
+                    alert("Login successfull.");
+                    setUserData({ email: "", password: "" })
+                    router('/home');
                     break;
                 }
             }
 
             if (flag == false) {
                 return alert("Please check credentails.")
-            }else{
-                
-            login(userData);
-
-            alert("Login successfull.");
-            setUserData({ email: "", password: "" })
-            router('/home');
             }
+
         } else {
             alert("All fields are mandatory")
         }
@@ -44,13 +43,15 @@ function Login() {
     return (
         <div>
             <h1>Login</h1>
-            <form onSubmit={handleSubmit} style={{border:'1px solid black',width:'250px',height:'300px',backgroundColor:'lightcyan',fontSize:'30px',padding:'50px',margin:'auto'}}>
+            <form onSubmit={handleSubmit} style={{ border: '1px solid black', width: '250px', height: '300px', backgroundColor: 'lightcyan', fontSize: '30px', padding: '50px', margin: 'auto' }}>
                 <label>Email</label><br />
                 <input type="email" name='email' onChange={handleChange} /><br />
                 <label>Password</label><br />
                 <input type="password" name="password" onChange={handleChange} /><br />
-                <input type="submit" value='Login' style={{width:'250px',height:'40px',backgroundColor:'blueviolet',border:'none',borderRadius:'5px',color:'white'}} /><br />
+                <input type="submit" value='Login' style={{ width: '250px', height: '40px', backgroundColor: 'blueviolet', border: 'none', borderRadius: '5px', color: 'white' }} /><br />
+                <button onClick={() => router("/register")}>Register</button>
             </form>
+
         </div>
     )
 }

@@ -48,8 +48,9 @@ function Login() {
                 <input type="email" name='email' onChange={handleChange} /><br />
                 <label>Password</label><br />
                 <input type="password" name="password" onChange={handleChange} /><br />
-                <input type="submit" value='Login' style={{ width: '250px', height: '40px', backgroundColor: 'blueviolet', border: 'none', borderRadius: '5px', color: 'white' }} /><br />
-                <button onClick={() => router("/register")}>Register</button>
+                <input type="submit" value='Login' style={{ width: '250px', height: '40px', backgroundColor: 'blueviolet', border: 'none', borderRadius: '5px', color: 'white' ,cursor:'pointer'}} /><br />
+                <span style={{fontSize:'14px'}}>Don't have an account?<span onClick={() => router("/register")} style={{cursor:'pointer'}}><b>Register here</b></span></span>
+                
             </form>
 
         </div>

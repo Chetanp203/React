@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
+import { useContext } from "react";
+import { AuthContext } from "./../../Context/Auth.context";
 
 const Cart = () => {
+    const {state, login,logout} =useContext(AuthContext);
     const [finalPrice, setFinalPrice]=useState(0);
 
     const [userCart, setUserCart] = useState([]);

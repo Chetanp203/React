@@ -37,6 +37,7 @@ import Cart from './components/18-07/Cart';
 import Profile from './components/22-07/Profile';
 
 
+
 function App(){
   const [myUsers, setMyUsers] = useState(["Rahul", "Rocky", "Manoj"])
 
@@ -45,6 +46,7 @@ function App(){
     <div>
        <Navbar/>
       <Routes>
+        
         <Route exact path='/profile' element={<Profile/>}/>
         <Route exact path='/cart' element={<Cart/>}/>
         <Route exact path='login' element={<Login/>}/>

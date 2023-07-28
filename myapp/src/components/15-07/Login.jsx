@@ -44,7 +44,7 @@ function Login() {
         <div style={{ width: '400px', height: '550px', margin: 'auto' }}>
             <div style={{ width: '100%', height: '250px', backgroundColor: 'black', color: 'white',padding:'20px' }}>
                 <h3 style={{textAlign:'right',paddingBottom:'150px'}}>Skip</h3>
-                <h1>Login/Signup</h1>
+                <h1>Login</h1>
                 <h3>for a tailored experience</h3>
             </div>
 

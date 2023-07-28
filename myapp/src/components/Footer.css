@@ -1,0 +1,20 @@
+.foot-con{
+    width: 100%;
+    border:1px solid black;
+    background-color: black;
+    color: white;
+    justify-content: space-around;
+    display: flex;
+}
+.cat-s{
+margin: 30px;
+}
+.cat-s h3{
+border-bottom: 2px solid white;
+margin-right: 60px;
+padding-bottom: 5px;
+}
+.cat-s ul li{
+    list-style: none;
+    padding: 5px;
+}

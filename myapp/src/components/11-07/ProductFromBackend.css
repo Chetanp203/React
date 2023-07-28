@@ -9,29 +9,70 @@
     justify-content: space-around;
 }
 .product-card{
-    width: 18%;
-    border: 2px solid black;
-    height: 470px;
+    width: 23%;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+    height: 460px;
     margin-bottom: 30px;
     border-radius: 5px;
 
 }
 .product-card:hover{
-    border: 5px solid red;
     cursor: pointer;
 }
 .product-card img{
-    width: 80%;
-    height: 260px;
-    margin-left: 10%;
-    margin-top: 25px;
+    width: 100%;
+    height: 270px;
+    /* margin-left: 10%;
+    margin-top: 25px; */
 }
-.product-card h4{
+.product-card h3{
     margin-left: 20px;
 }
-.product-card h2{
+.product-card span{
     margin-left: 20px;
+    font-weight: bold;
+    font-size: 14px;
 }
 .product-card p{
     margin-left: 20px;
+}
+.clothes{
+    width: 92%;
+    padding: 20px 50px;
+}
+.head-s{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    margin-left: 300px;
+    margin-bottom: 30px;
+}
+.head-s button{
+    width: 30%;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding-right: 90px;
+    margin-left:300px ;
+}
+.prods{
+    width: 100%;
+    display: flex;
+}
+.prod-1{
+    width: 22%;
+    border-top: 1px solid #ccc;
+    margin-right: 10px;
+}
+.prod-1 div{
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+}
+.prod-1 div input{
+    margin:10px 5px;
+}
+
+.prod-2{
+    width: 78%;
 }

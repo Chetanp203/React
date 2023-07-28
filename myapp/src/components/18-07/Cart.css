@@ -1,0 +1,126 @@
+.cart-container{
+    width: 100%;
+    background-color: rgb(228, 228, 228);
+    padding-top: 50px;
+}
+
+.discount-offer{
+    width: 100%;
+    padding: 20px 200px;
+    border: 1px solid rgb(115,153,71);
+    color: rgb(115,153,71);
+    background-color: rgb(219,247,217);
+
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+.green{
+    color: green;
+}
+.orange{
+    color: orange;
+}
+.left-cart{
+    width: 55%;
+    margin-top: 10px;
+    margin-left: 80px;
+}
+.cart-products{
+    display: 'flex';
+    justify-content: space-around;
+    
+}
+.c-1{
+    width: 95%;
+    background-color: white;
+    padding: 20px;
+}
+.c-1-1 button{
+    width: 150px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.c-1-2{
+    width: 100%;
+    margin-top:10px ;
+    margin-bottom:10px ;
+    
+}
+.c-1-2 input{
+    width: 15px;
+    height: 15px;
+}
+.c-1-2 div{
+    align-items: center;
+}
+
+.c-2{
+    width: 100%;
+    margin: 20px 0px;
+}
+.c-2 img{
+    width: 100%;
+}
+.c-3{
+    width: 100%;
+}
+.c-3-1{
+    width: 40%;
+    padding: 20px;
+}
+.c-3-1 button{
+    width: 70px;
+    border: none;
+    height: 30px;
+    margin: 5px;
+}
+.c-3-2{
+    width: 40%;
+    text-align: right;
+    padding: 20px;
+}
+    .right-cart{
+        width: 30%;
+        margin-top: 10px;
+        margin-right: 90px;
+    }
+
+    .cart-coupon{
+        width: 90%;
+        padding: 20px;
+        background-color: white;
+
+    }
+    .cart-coupon h3{
+        padding-bottom: 20px;
+    }
+    .cart-coupon input{
+        width: 60%;
+        border: 1px solid #ccc;
+        height: 39px;
+        background-color: white;
+        padding-left: 10px;
+        
+    }
+    .cart-coupon button{
+        width: 30%;
+        border: none;
+        height: 40px;
+        background-color: grey;
+        color: white;
+        font-size: 16px;
+    }
+
+.cart-checkout{
+    width: 90%;
+    padding: 20px;
+    background-color: white;
+    line-height: 35px;
+}
+.check-r{
+    text-align: right;
+}

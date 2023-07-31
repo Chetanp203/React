@@ -74,7 +74,7 @@ function App(){
         <Route exact path='/type3useEffect' element={<Type3UseEffect/>}/>
         <Route exact path='/type2useEffect' element={<Type2UseEffect/>}/>
         <Route exact path='/type1useEffect' element={<Type1UseEffect/>}/>
-        <Route exact path="/home" element={<Home/>}/>
+        <Route exact path="/" element={<Home/>}/>
         <Route exact path="/welcome" element={<Welcome/>} />
         <Route exact path="/counter" element={<Counter/>}/>
         <Route exact path="/section" element={<Section/>}/>

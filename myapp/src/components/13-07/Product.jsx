@@ -7,15 +7,27 @@ const Product = () => {
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
     const [currentUserEmail, setCurrentUserEmail] = useState("");
     const [products, setProducts] = useState([]);
-    const [singleProduct, setSingleProduct] = useState({});
+    const [singleProducts, setSingleProduct] = useState({});
     const { id } = useParams();
     const router = useNavigate();
+    const[isProductExist, setIsProductExist]=useState(false);
     // console.log(products, "- products")
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-            .then(res => res.json())
-            .then(json => setProducts(json))
-    }, [])
+    // useEffect(() => {
+    //     fetch('https://fakestoreapi.com/products')
+    //         .then(res => res.json())
+    //         .then(json => setProducts(json))
+    // }, [])
+
+
+    useEffect(()=>{
+        const getProducts = JSON.parse(localStorage.getItem("Products"));
+        if(getProducts){
+            setIsProductExist(true);
+            setProducts(getProducts);
+        }else{
+            setIsProductExist(false);
+        }
+    },[])
 
     useEffect(() => {
         var user = JSON.parse(localStorage.getItem("Current-user"));
@@ -34,7 +46,7 @@ const Product = () => {
     }, [id, products])
 
 
-    console.log(singleProduct, "- singleProduct")
+    console.log(singleProducts, "- singleProduct")
 
 
     function addCart() {
@@ -43,7 +55,7 @@ const Product = () => {
 
             for (var i = 0; i < users.length; i++) {
                 if (users[i].email == currentUserEmail) {
-                    users[i].cart.push(singleProduct);
+                    users[i].cart?.push(singleProducts);
                     localStorage.setItem("Users", JSON.stringify(users));
                     break;
                 }
@@ -86,21 +98,21 @@ const Product = () => {
                 <div style={{
                     width: "50%", cursor: 'pointer',
                     padding: '20px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}>
-                    <img style={{ width: "45%", border: '1px solid #ccc', padding: '7px', marginBottom: '20px' }} src={singleProduct.image} />
-                    <img style={{ width: "45%", border: '1px solid #ccc', padding: '7px', marginBottom: '20px' }} src={singleProduct.image} />
-                    <img style={{ width: "90%", border: '1px solid #ccc', padding: '7px', marginBottom: '20px' }} src={singleProduct.image} />
-                    <img style={{ width: "30%", border: '1px solid #ccc', padding: '7px', marginBottom: '20px' }} src={singleProduct.image} />
-                    <img style={{ width: "30%", border: '1px solid #ccc', padding: '7px', marginBottom: '20px' }} src={singleProduct.image} />
-                    <img style={{ width: "30%", border: '1px solid #ccc', padding: '7px', marginBottom: '20px' }} src={singleProduct.image} />
+                    <img style={{ width: "45%", border: '1px solid #ccc', padding: '7px', marginBottom: '20px' }} src={singleProducts.image} />
+                    <img style={{ width: "45%", border: '1px solid #ccc', padding: '7px', marginBottom: '20px' }} src={singleProducts.image} />
+                    <img style={{ width: "90%", border: '1px solid #ccc', padding: '7px', marginBottom: '20px' }} src={singleProducts.image} />
+                    <img style={{ width: "30%", border: '1px solid #ccc', padding: '7px', marginBottom: '20px' }} src={singleProducts.image} />
+                    <img style={{ width: "30%", border: '1px solid #ccc', padding: '7px', marginBottom: '20px' }} src={singleProducts.image} />
+                    <img style={{ width: "30%", border: '1px solid #ccc', padding: '7px', marginBottom: '20px' }} src={singleProducts.image} />
                 </div>
                 <div style={{ width: "30%", padding: '20px' }}>
-                    <h1>{singleProduct.title}</h1>
+                    <h1>{singleProducts.title}</h1>
                     <br />
-                    <p>{singleProduct.category}</p>
+                    <p>{singleProducts.category}</p>
                     <br />
                     {/* <h5 style={{paddingTop:'30px', paddingBottom:'30px'}}>Description: {singleProduct.description}</h5> */}
-                    <span style={{ paddingTop: '20px', fontSize: '18px', fontWeight: 'bold' }}>₹{singleProduct.price}
-                        <strike style={{ color: 'grey' }}>-₹{singleProduct.price}</strike><span style={{ color: 'orange' }}>.50% off</span></span>
+                    <span style={{ paddingTop: '20px', fontSize: '18px', fontWeight: 'bold' }}>₹{singleProducts.price}
+                        <strike style={{ color: 'grey' }}>-₹{singleProducts.price}</strike><span style={{ color: 'orange' }}>.50% off</span></span>
                     <br />
                     <p style={{ color: 'grey' }}><b>Includes all taxes</b></p>
                     <br />
@@ -112,7 +124,7 @@ const Product = () => {
                     <br />
                     <br />
                     <h4>Sea Green</h4><br />
-                    <img src={singleProduct.image} style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
+                    <img src={singleProducts.image} style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
                     <br />
                     <span>
                         Find your perfect match!
@@ -143,7 +155,7 @@ const Product = () => {
                         <h3>Product Details</h3>
                         <br />
                         <h4>Product Description</h4>
-                        <p>{singleProduct.description}</p>
+                        <p>{singleProducts.description}</p>
                         <div style={{ width: '100%', display: 'flex', margin: '20px 0px' }}>
                             <div>
                                 <ul>

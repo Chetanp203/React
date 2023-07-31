@@ -14,7 +14,7 @@ const Cart = () => {
     console.log(userCart, "-userCart");
 
     useEffect(() => {
-        if (userCart.length) {
+        if (userCart?.length) {
             var totalPrice = 0;
             for (var i = 0; i < userCart.length; i++) {
                 totalPrice += userCart[i].price

@@ -31,7 +31,7 @@ function Navbar() {
                     <h4 style={{ cursor: 'pointer' }}>Help & Support</h4>
                 </div>
                 <div style={{ width: '30%' }}>
-                    <img onClick={() => router('/home')} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf5uZbGCtoz7XKYAn_2pqcVoOTTNcYgKGKww&usqp=CAU" style={{ width: '60%', height: '55px', cursor: 'pointer' }} />
+                    <img onClick={() => router('/')} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf5uZbGCtoz7XKYAn_2pqcVoOTTNcYgKGKww&usqp=CAU" style={{ width: '60%', height: '55px', cursor: 'pointer' }} />
                 </div>
                 <div style={{ width: '35%', display: 'flex', alignItems: 'center' }}>
                     {user?.email ?

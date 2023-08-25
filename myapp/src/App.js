@@ -14,7 +14,7 @@ import Type4UseEffect from './components/Type4UseEffect';
 import Params from './components/01-07/Params';
 import SingleProduct from './components/01-07/SingleProduct';
 import DeclarativeWay from './components/01-07/DeclarativeWay';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Map from './components/01-07/Map';
 import Wrapper from './components/01-07/Wrapper';
 import StyledComponent from './components/01-07/StyledComponent';
@@ -35,10 +35,13 @@ import Register from './components/15-07/Register';
 import Login from './components/15-07/Login';
 import Cart from './components/18-07/Cart';
 import Profile from './components/22-07/Profile';
+import { AuthContext } from './Context/Auth.context';
 
 
 
 function App(){
+  const {state}= useContext(AuthContext);
+  console.log(state?.user,"user here")
   const [myUsers, setMyUsers] = useState(["Rahul", "Rocky", "Manoj"])
 
   console.log("Inside App")
